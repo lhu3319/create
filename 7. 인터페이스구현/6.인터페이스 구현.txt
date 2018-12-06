@@ -1,0 +1,136 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
+using DB;
+using System.Collections;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
+
+namespace exam1127
+{
+    class MainView
+    {
+        MySqlDataReader sdr;
+        Hashtable hashtable;
+        private MYsql db;
+        private Form parentForm, targetForm;
+        Panel head, contents;
+        Button btn1, btn2, btn3;
+        Commons comm = new Commons();
+        private Form tagetForm;
+        public MainView(Form parentForm)
+        {
+            this.parentForm = parentForm;
+            db = new MYsql();
+            getView();
+        }
+        
+        
+        
+        private void getView()
+        {
+            string sql ="select * from ViewControl;";
+            sdr = db.Reader(sql);
+            while (sdr.Read())
+            {
+
+                if ((sdr["vcType"].ToString()) == "panel")
+                {
+                    if (Convert.ToInt32(sdr["vcNo"].ToString()) == 1)
+                    {
+                        hashtable = new Hashtable();
+                        hashtable.Add("name", sdr["vcName"].ToString());
+                        hashtable.Add("size", new Size(Convert.ToInt32(sdr["sizeX"].ToString()), Convert.ToInt32(sdr["sizeY"].ToString())));
+                        hashtable.Add("point", new Point(Convert.ToInt32(sdr["pointX"]), Convert.ToInt32(sdr["pointY"])));
+                        if (Convert.ToInt32(sdr["color"].ToString()) == 1) hashtable.Add("color", Color.Silver);
+                        head = comm.getPanel(hashtable, parentForm);
+                    }
+                    else if (Convert.ToInt32(sdr["vcNo"].ToString()) == 2)
+                    {
+                        hashtable = new Hashtable();
+                        hashtable.Add("name", sdr["vcName"].ToString());
+                        hashtable.Add("size", new Size(Convert.ToInt32(sdr["sizeX"].ToString()), Convert.ToInt32(sdr["sizeY"].ToString())));
+                        hashtable.Add("point", new Point(Convert.ToInt32(sdr["pointX"]), Convert.ToInt32(sdr["pointY"])));
+                        if (Convert.ToInt32(sdr["color"].ToString()) == 2) hashtable.Add("color", Color.Yellow);
+                        contents = comm.getPanel(hashtable, parentForm);
+                    }
+                }
+                else if ((sdr["vcType"].ToString()) == "button")
+                {
+                    if (Convert.ToInt32(sdr["vcNo"].ToString()) == 3)
+                    {
+                        hashtable = new Hashtable();
+                        hashtable.Add("name", sdr["vcName"].ToString());
+                        hashtable.Add("text", sdr["vcText"].ToString());
+                        hashtable.Add("size", new Size(Convert.ToInt32(sdr["sizeX"].ToString()), Convert.ToInt32(sdr["sizeY"].ToString())));
+                        hashtable.Add("point", new Point(Convert.ToInt32(sdr["pointX"].ToString()), Convert.ToInt32(sdr["pointY"].ToString())));
+                        if (Convert.ToInt32(sdr["color"].ToString()) == 3) hashtable.Add("color", Color.White);
+                        if (Convert.ToInt32(sdr["eventH"].ToString()) == 1) hashtable.Add("click", (EventHandler)btn1_click);
+                        btn1 = comm.getButton(hashtable, head);
+                    }
+                    else if (Convert.ToInt32(sdr["vcNo"].ToString()) == 4)
+                    {
+                        hashtable = new Hashtable();
+                        hashtable.Add("name", sdr["vcName"].ToString());
+                        hashtable.Add("text", sdr["vcText"].ToString());
+                        hashtable.Add("size", new Size(Convert.ToInt32(sdr["sizeX"].ToString()), Convert.ToInt32(sdr["sizeY"].ToString())));
+                        hashtable.Add("point", new Point(Convert.ToInt32(sdr["pointX"].ToString()), Convert.ToInt32(sdr["pointY"].ToString())));
+                        if (Convert.ToInt32(sdr["color"].ToString()) == 3) hashtable.Add("color", Color.White);
+                        if (Convert.ToInt32(sdr["eventH"].ToString()) == 2)  hashtable.Add("click", (EventHandler)btn2_click);
+                        btn2 = comm.getButton(hashtable, head);
+                    }
+                    else if (Convert.ToInt32(sdr["vcNo"].ToString()) == 5)
+                    {
+                        hashtable = new Hashtable();
+                        hashtable.Add("name", sdr["vcName"].ToString());
+                        hashtable.Add("text", sdr["vcText"].ToString());
+                        hashtable.Add("size", new Size(Convert.ToInt32(sdr["sizeX"].ToString()), Convert.ToInt32(sdr["sizeY"].ToString())));
+                        hashtable.Add("point", new Point(Convert.ToInt32(sdr["pointX"].ToString()), Convert.ToInt32(sdr["pointY"].ToString())));
+                        if (Convert.ToInt32(sdr["color"].ToString()) == 3) hashtable.Add("color", Color.White);    
+                        if (Convert.ToInt32(sdr["eventH"].ToString()) == 3)  hashtable.Add("click", (EventHandler)btn3_click);
+                        btn3 = comm.getButton(hashtable, head);
+                    }
+
+                }
+            }
+            //string[] arr = new string[sdr.FieldCount];
+
+            //for (int i = 0; i < sdr.FieldCount; i++)
+            //{sql= string.Format("select * from ViewControl where svNo={0};",i+1);
+            //    if ()
+            //    panel1.Name = sdr.GetValue(i).ToString();
+            //}
+            db.ReaderClose(sdr);
+
+        }
+
+        private void btn1_click(object sender, EventArgs e)
+        {
+            if (tagetForm != null) tagetForm.Dispose();
+            // form 호출
+            //tagetForm = comm.getMdiForm(parentForm, new UserForm(db), contents);
+            tagetForm.Show();
+        }
+
+        private void btn3_click(object sender, EventArgs e)
+        {
+            // form 초기화
+            if (tagetForm != null) tagetForm.Dispose();
+            // form 호출
+
+        }
+
+        private void btn2_click(object sender, EventArgs e)
+        {
+            // form 초기화
+            if (tagetForm != null) tagetForm.Dispose();
+            // form 호출
+
+        }
+    }
+}

@@ -1,0 +1,38 @@
+로그인 : root  /  1234 (관리자계정)
+계정 전환 : su gdc(사용자계정)
+현재계정확인 : whoami
+처음계정확인 : who am i
+로그아웃 : exit
+패키지업데이트 : yum -y update
+지나간명령어보기 : history
+명령어내역초기화 : history -c
+----------------------------------------------
+클라이언트프로그램 : sshd  -> cd /etc/ssh
+실행여부 : systemctl status sshd
+종료 : systemctl stop sshd
+실행 : systemctl start sshd
+---------------------------------------------------
+ip확인 : ip addr
+현재디렉토리확인 : ls -al
+현재디렉토리위치 : pwd
+디렉토리변경 : cd /
+--------------------------------------------------
+새파일만들기 :  touch 파일명
+디스크용량확인 : df -h
+사용자및비밀번호목록 : /etc/passwd
+그룹목록 : /etc/group
+문서들 출력 : cat
+
+-------------------------------------------------------
+웹서버 여는 방법
+firewall-cmd --reload
+firewall-cmd --permanent --add-port=80/tcp
+
+yum -y install httpd
+systemctl status httpd ( httpd 상태 확인)
+systemctl start httpd (httpd 시작)
+systemctl status httpd ( 켜졌는지 확인)
+
+yum -y install httpd 
+
+IP로 인터넷 들어가보기
