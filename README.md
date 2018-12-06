@@ -1,4 +1,4 @@
-> * [스마트팩토리 프로그래밍]https://github.com/lhu3319/create.git
+> * [스마트팩토리 프로그래밍](https://github.com/lhu3319/create.git)
 > * [프로그래밍 언어 활용]()
 > * [응용 SW 기초 기술 활용]()
 > * [요구사항확인]()
