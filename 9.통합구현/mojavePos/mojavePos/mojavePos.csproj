@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{670F5712-6DB5-47DD-9557-3B04B515DAEA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>mojavePos</RootNamespace>
+    <AssemblyName>mojavePos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=3.0.0.34420, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Xdt.3.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="btnSet.cs" />
+    <Compile Include="CHUN\Category_Update_delete_modal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\Category_Update_delete_modal.Designer.cs">
+      <DependentUpon>Category_Update_delete_modal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUN\Menu_Insert_modal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\Menu_Insert_modal.Designer.cs">
+      <DependentUpon>Menu_Insert_modal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUN\Menu_update_delete_modal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\Menu_update_delete_modal.Designer.cs">
+      <DependentUpon>Menu_update_delete_modal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUN\Module.cs" />
+    <Compile Include="CHUN\Category_Insert_modal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\Category_Insert_modal.Designer.cs">
+      <DependentUpon>Category_Insert_modal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="comboboxSet.cs" />
+    <Compile Include="Commons.cs" />
+    <Compile Include="DateSet.cs" />
+    <Compile Include="Han\InsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\InsertForm.Designer.cs">
+      <DependentUpon>InsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\MoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\MoneyForm.Designer.cs">
+      <DependentUpon>MoneyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\RankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\RankForm.Designer.cs">
+      <DependentUpon>RankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Han\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Han\WebComm.cs" />
+    <Compile Include="menuForm\CountView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuForm\CountView.Designer.cs">
+      <DependentUpon>CountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUN\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUN\ID_Maker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\ID_Maker.Designer.cs">
+      <DependentUpon>ID_Maker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CHUN\FORM_03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHUN\FORM_03.Designer.cs">
+      <DependentUpon>FORM_03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lbSet.cs" />
+    <Compile Include="lvSet.cs" />
+    <Compile Include="menuForm\MainPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuForm\MainPos.Designer.cs">
+      <DependentUpon>MainPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\Cash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\Cash.Designer.cs">
+      <DependentUpon>Cash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\Coupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modal\Coupon.Designer.cs">
+      <DependentUpon>Coupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\WebAPI.cs" />
+    <Compile Include="pictureBoxSet.cs" />
+    <Compile Include="pnSet.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Richtb.cs" />
+    <Compile Include="tbSet.cs" />
+    <Compile Include="_Create.cs" />
+    <EmbeddedResource Include="CHUN\FORM_03.resx">
+      <DependentUpon>FORM_03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CHUN\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menuForm\CountView.resx">
+      <DependentUpon>CountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modal\Cash.resx">
+      <DependentUpon>Cash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\mojave.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moicon_BaY_icon.ico" />
+    <None Include="Resources\모자브포스3.png" />
+    <None Include="Resources\모자브포스2.png" />
+    <None Include="Resources\모자브포스.png" />
+    <None Include="Resources\자물쇠잠김.png" />
+    <None Include="Resources\가방수정.png" />
+    <None Include="Resources\자물쇠풀림.png" />
+    <None Include="Resources\배경화면1.png" />
+    <None Include="Resources\test2.jpg" />
+    <None Include="Resources\aa.bmp" />
+    <None Include="Resources\+버튼.png" />
+    <None Include="Resources\coo1.png" />
+    <None Include="Resources\coo2.png" />
+    <Content Include="Resources\edbeafa0-3460-47e9-9fd9-f5f6db7cdd00.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.11.0\build\NUnit.props'))" />
+  </Target>
+</Project>
