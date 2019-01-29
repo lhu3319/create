@@ -10,7 +10,7 @@
 > * [통합 구현](https://github.com/lhu3319/create/tree/master/9.%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/mojavePos/mojavePos)
 > * [제품소프트웨어 패키징](https://github.com/lhu3319/create/tree/master/10.%20%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%ED%8C%A8%ED%82%A4%EC%A7%95)
 > * [정보시스템 이행](https://github.com/lhu3319/create/upload/master)
-> * [애플리케이션 테스트 수행]()
+> * [애플리케이션 테스트 수행](http://gudi.kr/gdc3/201901/20190129/%ec%9e%84%ed%95%9c%ec%9d%98.zip)
 > * [애플리케이션 테스트 관리]()
 > * [애플리케이션 배포]()
 > * [프로젝트]()
