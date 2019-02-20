@@ -12,5 +12,5 @@
 > * [정보시스템 이행](https://github.com/lhu3319/create/upload/master)
 > * [애플리케이션 테스트 수행](http://gudi.kr/gdc3/201901/20190129/%ec%9e%84%ed%95%9c%ec%9d%98.zip)
 > * [애플리케이션 테스트 관리](http://gudi.kr/gdc3/201902/20190213/%ec%9e%84%ed%95%9c%ec%9d%98.zip)
-> * [애플리케이션 배포]()
+> * [애플리케이션 배포](http://gudi.kr/gdc3/201902/20190220/%EC%9E%84%ED%95%9C%EC%9D%98/)
 > * [프로젝트]()
